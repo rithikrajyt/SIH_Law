@@ -1,33 +1,11 @@
 import { Link } from "react-router-dom";
-import {db} from "../firebase"
 import { useState } from "react";
 
 export const Header = () => {
-
-  const [email, setemail] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  
-    db.collection('Email').add({
-      email:email,
-     
-    })
-    .then(() => {
-      alert("Email has been saved");
-    })
-    .catch(error => {
-      alert(error.message);
-    });
-  
-    setemail("")
-  }
-
     return (
       <div className="relative flex flex-col-reverse px-4 py-16 mx-auto lg:block lg:flex-col lg:py-32 xl:py-48 md:px-8 sm:max-w-xl md:max-w-full">
         <div className="z-0 flex justify-center h-full -mx-4 overflow-hidden lg:pt-24 lg:pb-16 lg:pr-8 xl:pr-0 lg:w-1/2 lg:absolute lg:justify-end lg:bottom-0 lg:left-0 lg:items-center">
           <img
-            // src="https://kitwind.io/assets/kometa/laptop.png"
             src="https://cdn.pixabay.com/photo/2017/07/23/17/43/isolated-2532037_640.png"
             className="object-cover object-right w-full h-auto lg:w-auto lg:h-full"
             alt=""

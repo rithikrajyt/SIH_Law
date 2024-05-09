@@ -11,4 +11,4 @@ const Direct = () => {
   )
 }
 
-export default Direct
+export default Direct;
