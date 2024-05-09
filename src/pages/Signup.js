@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Nav } from "./Nav";
+import { Nav } from "../components/Nav";
 
 export const Signup = () => {
   return (
