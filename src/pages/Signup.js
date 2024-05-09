@@ -1,8 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Nav } from "../components/Nav";
+import { useState } from "react";
+import { signUp } from "../service/api";
 
 export const Signup = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await signUp(email, password );
+      // handle success response
+      console.log(response);
+    } catch (error) {
+      // handle error
+      console.error(error);
+    }
+  };
+
   return (
     <div className="bg-gray-100">
     <Nav/>
@@ -24,21 +42,7 @@ export const Signup = () => {
           <h1 className="text-sm font-semibold mb-6 text-gray-500 text-center">
             Join to Our Community with all time access and free{" "}
           </h1>
-          <form action="#" method="POST" className="space-y-4">
-            <div>
-              <label
-                for="username"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Username
-              </label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
-              />
-            </div>
+          <form action="" method="POST" onSubmit={handleSignup} className="space-y-4">
             <div>
               <label
                 for="email"
@@ -51,6 +55,8 @@ export const Signup = () => {
                 id="email"
                 name="email"
                 className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
               />
             </div>
             <div>
@@ -65,6 +71,8 @@ export const Signup = () => {
                 id="password"
                 name="password"
                 className="mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
               />
             </div>
             <div>

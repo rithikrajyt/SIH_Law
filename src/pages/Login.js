@@ -1,7 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import { Nav } from "../components/Nav";
+import { login } from "../service/api";
+
 function Login() {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async(e) => {
+    e.preventDefault();
+    try {
+      const response = await login(email,password);
+      //handle success response
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
   return (
     <div className="bg-gray-100">
       <Nav/>
@@ -32,7 +48,7 @@ function Login() {
       </div>
       <div className="flex w-full lg:w-1/2 justify-center items-center bg-white space-y-8">
         <div className="w-full px-8 md:px-32 lg:px-24">
-          <form className="bg-white rounded-md shadow-2xl p-5">
+          <form className="bg-white rounded-md shadow-2xl p-5" action="" onSubmit={handleLogin} method="POST">
             <h1 className="text-gray-800 font-bold text-2xl mb-1">
               Hello Again!
             </h1>
@@ -89,6 +105,8 @@ function Login() {
             >
               Login
             </button>
+            </form>
+            </div>
             <div className="flex justify-between mt-4">
               <span className="text-sm ml-2 hover:text-brown-500 cursor-pointer hover:-translate-y-1 duration-500 transition-all">
                 Forgot Password ?
@@ -99,8 +117,7 @@ function Login() {
               >
                 Don't have an account yet?
               </Link>
-            </div>
-          </form>
+           
         </div>
       </div>
     </div>

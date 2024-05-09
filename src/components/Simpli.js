@@ -1,39 +1,12 @@
 import img2 from './img2.jpg'
-import { useState } from 'react';
-import {db} from "../firebase"
+
 
 export const Simpli = () => {
-
-const [firstName, setfirstName] = useState("");
-const [lastName, setlastName] = useState("");
-const [caseDetail, setcaseDetail] = useState("");
-
-const handleSubmit = (e) => {
-  e.preventDefault();
-
-  db.collection('LawData').add({
-    firstName:firstName,
-    lastName:lastName,
-    caseDetail:caseDetail,
-  })
-  .then(() => {
-    alert("Form has been submitted");
-  })
-  .catch(error => {
-    alert(error.message);
-  });
-
-  setfirstName("")
-  setlastName("")
-  setcaseDetail("")
-}
-
 
     return (
       <div className="relative">
         <img
           src={img2}
-        //   src="https://images.pexels.com/photos/3228766/pexels-photo-3228766.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
           className="absolute inset-0 object-cover w-full h-full"
           alt=""
         />
@@ -79,7 +52,7 @@ const handleSubmit = (e) => {
                   <h3 className="mb-4 text-xl font-bold sm:text-center sm:mb-6 sm:text-3xl">
                     DRAFTING
                   </h3>
-                  <form onSubmit={handleSubmit}>
+                  <form>
                     <div className="mb-1 sm:mb-2">
                       <label
                         htmlFor="firstName"
@@ -94,8 +67,7 @@ const handleSubmit = (e) => {
                         className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-brown-600 focus:outline-none focus:shadow-outline"
                         id="firstName"
                         name="firstName"
-                        value={firstName}
-                        onChange={(e) => setfirstName(e.target.value)}
+                   
                       />
                     </div>
                     <div className="mb-1 sm:mb-2">
@@ -112,8 +84,7 @@ const handleSubmit = (e) => {
                         className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-brown-600 focus:outline-none focus:shadow-outline"
                         id="lastName"
                         name="lastName"
-                        value={lastName}
-                        onChange={(e) => setlastName(e.target.value)}
+                  
                       />
                     </div>
                     <div className="mb-1 sm:mb-2">
@@ -130,8 +101,7 @@ const handleSubmit = (e) => {
                         className="flex-grow w-full h-40 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-brown-400 focus:outline-none focus:shadow-outline"
                         id="email"
                         name="caseDetail"
-                        value={caseDetail}
-                        onChange={(e) => setcaseDetail(e.target.value)}
+                 
                       />
                     </div>
                     <div className="mt-4 mb-2 sm:mb-4">
