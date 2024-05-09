@@ -1,11 +1,11 @@
 import React from 'react'
-import { Nav } from '../components/Nav'
-import Upload from '../components/Upload'
+import Upload from './Upload'
+import Navbar from './Navbar'
 
 const Drafting = () => {
   return (
     <div>
-      <Nav/>
+      <Navbar/>
       <Upload/>
     </div>
   )

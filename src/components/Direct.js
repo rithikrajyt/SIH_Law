@@ -1,6 +1,6 @@
 import React from 'react'
-import { Nav } from '../components/Nav'
-import { Simpli } from '../components/Simpli'
+import { Nav } from './Nav'
+import { Simpli } from './Simpli'
 
 const Direct = () => {
   return (
