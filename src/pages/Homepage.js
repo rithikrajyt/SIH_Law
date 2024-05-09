@@ -4,8 +4,8 @@ import { Nav } from '../components/Nav'
 
 const Homepage = () => {
   return (
-    <div>
-      <Nav/>
+    <div className='bg-gray-50'>
+      <Nav showButtons={true}/>
       <Header/>
     </div>
   )

@@ -5,6 +5,7 @@ import Drafting from './pages/Drafting';
 import Direct from './pages/Direct';
 import { Signup } from './components/Signup';
 import Booking from './pages/Booking';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path = "/Drafting" element = {<Drafting/>} />
         <Route exact path = "/simplify" element = {<Direct/>} />
         <Route exact path = "/signup" element = {<Signup/>} />
+        <Route exact path = "/login" element = {<Login/>} />
         <Route exact path = "/booking" element = {<Booking/>} />
       </Routes>
     </>
