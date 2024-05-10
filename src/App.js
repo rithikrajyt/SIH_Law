@@ -7,6 +7,8 @@ import { Signup } from './pages/Signup';
 import Booking from './components/Booking';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Explain from './pages/Explain';
+import Chatbot from './pages/Chatbot';
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
         <Route exact path = "/draft" element = {<Drafting/>} />
         <Route exact path = "/simplify" element = {<Direct/>} />
         <Route exact path = "/dashboard" element = {<Dashboard/>} />
-        <Route exact path = "/signup" element = {<Signup/>} />
+        <Route exact path = "/result" element = {<Explain/>} />
+        <Route exact path = "/result" element = {<Explain/>} />
+        <Route exact path = "/chatbot" element = {<Chatbot/>} />
         <Route exact path = "/login" element = {<Login/>} />
         <Route exact path = "/booking" element = {<Booking/>} />
       </Routes>
