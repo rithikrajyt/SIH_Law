@@ -106,7 +106,6 @@ function Login() {
               Login
             </button>
             </form>
-            </div>
             <div className="flex justify-between mt-4">
               <span className="text-sm ml-2 hover:text-brown-500 cursor-pointer hover:-translate-y-1 duration-500 transition-all">
                 Forgot Password ?
@@ -119,6 +118,8 @@ function Login() {
               </Link>
            
         </div>
+            </div>
+            
       </div>
     </div>
     </div>
