@@ -1,7 +1,20 @@
 import img2 from './img2.jpg'
-
+import { getQuestions } from '../service/mlApi1';
+import { useState } from 'react';
 
 export const Simpli = () => {
+const [category, setCategory] = useState("");
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    try{
+      const response = await getQuestions(category);
+
+      console.log(response);
+    }catch(error){
+      console.error(error);
+    }
+  }
 
     return (
       <div className="relative">
@@ -69,7 +82,9 @@ export const Simpli = () => {
                         className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-brown-600 focus:outline-none focus:shadow-outline"
                         id="category"
                         name="category"
-                  
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+
                       />
                     </div>
                   
@@ -77,6 +92,7 @@ export const Simpli = () => {
                       <button
                         type="submit"
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-brown-800 hover:bg-brown-600 focus:shadow-outline focus:outline-none"
+                        onClick={handleSubmit}
                       >
                         Submit Your Case
                       </button>

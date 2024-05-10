@@ -76,6 +76,7 @@ function Login() {
                 type="email"
                 name="email"
                 placeholder="Email Address"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="flex items-center border-2 mb-12 py-2 px-3 rounded-2xl ">
@@ -97,6 +98,7 @@ function Login() {
                 name="password"
                 id="password"
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <button
