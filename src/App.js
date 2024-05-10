@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Explain from './pages/Explain';
 import Chatbot from './pages/Chatbot';
+import Print from './pages/Print';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path = "/result" element = {<Explain/>} />
         <Route exact path = "/result" element = {<Explain/>} />
         <Route exact path = "/chatbot" element = {<Chatbot/>} />
+        <Route exact path = "/print" element = {<Print/>} />
         <Route exact path = "/login" element = {<Login/>} />
         <Route exact path = "/booking" element = {<Booking/>} />
       </Routes>
