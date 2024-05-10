@@ -5,8 +5,9 @@ const headers = {
     "Access-Control-Allow-Origin": "http://localhost:3000",
 };
 
-const API_URI = "http://localhost:8080";
+const API_URI = "http://localhost:8000";
 
+//API Endpoint to get Questions Array
 export const getQuestions = async (category) => {
     try {
         const response = await axios.post(`${API_URI}/drafting/questions/`,

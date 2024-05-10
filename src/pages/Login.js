@@ -1,10 +1,11 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Nav } from "../components/Nav";
 import { login } from "../service/api";
+import { toast } from "react-toastify";
 
 function Login() {
-
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,8 +14,16 @@ function Login() {
     try {
       const response = await login(email,password);
       //handle success response
-      console.log(response);
-    } catch (error) {
+      if(response.success){
+        document.cookie = `token=${response.token}`;
+        toast.success("Logged in Successfully!")
+        navigate('/dashboard');
+        console.log(response);
+      }else{
+        console.log(response);
+
+      }
+       } catch (error) {
       console.error(error);
     }
   }

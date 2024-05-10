@@ -1,10 +1,18 @@
 import React from 'react';
 import { FaUser } from 'react-icons/fa';
 import { FaSignOutAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
+    const navigate = useNavigate();
+    const handleLogout = async () =>{
+      setIsMenuOpen(false);
+      document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      toast.error("Logout Successfully!");
+      navigate('/login');
+    }
     return (
         <div class="py-5 sm:max-w-xl md:max-w-full md:px-14">
         <div class="relative flex items-center justify-between">
@@ -31,12 +39,12 @@ const Navbar = () => {
             </button>
             {isMenuOpen && (
                 <div class="absolute z-50 right-0 top-14 w-32 bg-white rounded-xl shadow-xl">
-                    <a
-                        href="/logout"
+                    <button
+                        onClick={handleLogout}
                         className="flex px-4 py-2 text-lg font-bold text-black hover:bg-red-300 rounded-lg"
                     >
                         Logout<FaSignOutAlt className="ml-4 w-6 h-6"/>
-                    </a>
+                    </button>
                 </div>
             )}
         </div>
