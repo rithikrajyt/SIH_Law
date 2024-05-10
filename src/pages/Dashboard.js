@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Upload from '../components/Upload';
 import { Simpli } from '../components/Simpli';
 import './dashboard.css'
-import Booking from '../components/Booking';
+import BookingPage from './BookingPage';
 const Dashboard = () => {
     return (
         <>
@@ -21,7 +21,7 @@ const Dashboard = () => {
               <Routes>
                 <Route path='' element={<Simpli/>}/>
               <Route path='simplify' element={<Upload/>}/>
-              <Route path='booking' element={<Booking/>}/>
+              <Route path='booking' element={<BookingPage/>}/>
               </Routes>
             </div>
           </div>

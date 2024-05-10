@@ -21,24 +21,24 @@ export const Nav = (props) => {
         {props.showButtons && (
           <ul class="flex items-center hidden space-x-8 lg:flex">
             <li>
-              <a
-                href="/"
+              <Link
+                to="/login"
                 class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide font-semibold text-brown-800 transition duration-200 rounded shadow-md bg-white hover:bg-gray-100 focus:shadow-outline focus:outline-none"
                 aria-label="login"
                 title="login"
               >
-                <Link to="/login">Login</Link>
-              </a>
+                Login
+              </Link>
             </li>
             <li>
-              <a
-                href="/"
+              <Link
+                to="/signup"
                 class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-brown-800 hover:bg-brown-600 focus:shadow-outline focus:outline-none"
                 aria-label="Sign up"
                 title="Sign up"
               >
-                <Link to="/Signup">Sign up</Link>
-              </a>
+               Sign up
+              </Link>
             </li>
           </ul>
         )}
